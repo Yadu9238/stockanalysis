@@ -45,7 +45,6 @@ if window_width is None:
 print(window_width)
 if window_width < 768:
     # Mobile View
-    st.write("📱 Mobile View Detected")
     left_col = st.container()
     right_col = st.container()
 else:
