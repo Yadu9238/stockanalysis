@@ -13,7 +13,8 @@ aws_secret = st.secrets["aws"]["aws_secret"]
 # --- Set up S3 filesystem ---
 fs = s3fs.S3FileSystem(
     key=aws_id,
-    secret=aws_secret
+    secret=aws_secret,
+    client_kwargs={'region_name': st.secrets["AWS_REGION"]}
 )
 stock_path = "s3://stock-analysis-yk/agg-data/stockdata/"
 sentiment_path = "s3://stock-analysis-yk/agg-data/stocksentiment/"
