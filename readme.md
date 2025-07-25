@@ -41,7 +41,7 @@ stockanalysis/
 
 ## WIP
 - Airflow for automation
-- 
+  
 ## Data Sources
 - https://nseindia.com
 - https://news.google.com/rss/search?q=stock+market+india
