@@ -7,8 +7,8 @@ import s3fs
 st.set_page_config(page_title="Stock & Sentiment Dashboard", layout="wide")
 
 # --- AWS credentials from secrets ---
-aws_id = st.secrets["aws"]["aws_access"]
-aws_secret = st.secrets["aws"]["aws_secret"]
+aws_id = st.secrets["aws"]["aws_access_key_id"]
+aws_secret = st.secrets["aws"]["aws_secret_access_key"]
 #print(aws_id,aws_secret)
 # --- Set up S3 filesystem ---
 fs = s3fs.S3FileSystem(
