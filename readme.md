@@ -39,6 +39,9 @@ stockanalysis/
 5. Use `silver_to_gold_transformation.ipynb` for creating calculated columns, joining with sentiment data and advanced transformations
 6. Visualize in dashboard
 
+## WIP
+- Airflow for automation
+- 
 ## Data Sources
 - https://nseindia.com
 - https://news.google.com/rss/search?q=stock+market+india
