@@ -7,13 +7,13 @@ import s3fs
 st.set_page_config(page_title="Stock & Sentiment Dashboard", layout="wide")
 
 # --- AWS credentials from secrets ---
-aws_id = st.secrets["aws"]["aws_access_key_id"]
-aws_secret = st.secrets["aws"]["aws_secret_access_key"]
+AWS_ACCESS_KEY_ID = st.secrets["aws"]["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = st.secrets["aws"]["AWS_SECRET_ACCESS_KEY"]
 #print(aws_id,aws_secret)
 # --- Set up S3 filesystem ---
 fs = s3fs.S3FileSystem(
-    key=aws_id,
-    secret=aws_secret,
+    key=AWS_ACCESS_KEY_ID,
+    secret=AWS_SECRET_ACCESS_KEY,
     client_kwargs={'region_name': st.secrets["aws"]["AWS_REGION"]}
 )
 stock_path = "s3://stock-analysis-yk/agg-data/stockdata/"
