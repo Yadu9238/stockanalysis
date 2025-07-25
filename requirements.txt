@@ -1,4 +1,4 @@
-s3fs
-plotly
-pandas
+pandas==1.5.2
+s3fs==2022.11.0
 streamlit
+plotly
