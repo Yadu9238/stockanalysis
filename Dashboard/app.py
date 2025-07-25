@@ -7,8 +7,8 @@ import s3fs
 st.set_page_config(page_title="Stock & Sentiment Dashboard", layout="wide")
 
 # --- AWS credentials from secrets ---
-AWS_ACCESS_KEY_ID = st.secrets["aws"]["AWS_ACCESS_KEY_ID"]
-AWS_SECRET_ACCESS_KEY = st.secrets["aws"]["AWS_SECRET_ACCESS_KEY"]
+AWS_ACCESS_KEY_ID = st.secrets["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = st.secrets["AWS_SECRET_ACCESS_KEY"]
 #print(aws_id,aws_secret)
 # --- Set up S3 filesystem ---
 
@@ -21,7 +21,7 @@ def load_s3_data(s3_path):
     fs = s3fs.S3FileSystem(
     key=AWS_ACCESS_KEY_ID,
     secret=AWS_SECRET_ACCESS_KEY,
-    client_kwargs={'region_name': st.secrets["aws"]["AWS_REGION"]}
+    client_kwargs={'region_name': st.secrets["AWS_REGION"]}
 )
     files = [f"s3://{f}" for f in fs.ls(s3_path) if "part" in f and f.endswith(".csv")]
     return pd.concat([pd.read_csv(f) for f in files])
